@@ -4,11 +4,17 @@
 
 ### Step 1: Clone & Install
 ```bash
-cd /home/rudrabhowmick/backend/fastapi/onelink-portfolio/backend
+cd <project-folder>/backend
 
 # Create virtual environment
-python3 -m venv venv
+python -m venv venv
+
+# Linux/macOS
 source venv/bin/activate
+
+# Windows
+venv\Scripts\activate
+
 
 # Install dependencies
 pip install -r requirements.txt
@@ -34,7 +40,7 @@ cp .env.example .env
 nano .env
 ```
 
-Update these values:
+Update these values in .env file:
 ```env
 GITHUB_CLIENT_ID=your_client_id_here
 GITHUB_CLIENT_SECRET=your_client_secret_here
@@ -46,7 +52,6 @@ SECRET_KEY=your-super-secret-key-change-this
 
 ```bash
 cd backend
-source venv/bin/activate
 uvicorn app.main:app --reload
 ```
 
