@@ -7,8 +7,14 @@
 cd <project-folder>/backend
 
 # Create virtual environment
-python3 -m venv venv
+python -m venv venv
+
+# Linux/macOS
 source venv/bin/activate
+
+# Windows
+venv\Scripts\activate
+
 
 # Install dependencies
 pip install -r requirements.txt
