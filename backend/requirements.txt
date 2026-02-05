@@ -1,9 +1,11 @@
 fastapi
-uvicorn
+uvicorn[standard]
 sqlalchemy
 pydantic-settings
+pydantic
 python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
-PyPDF2       # for resume parsing
-httpx           # for GitHub API calls
+PyPDF2
+python-docx
+httpx

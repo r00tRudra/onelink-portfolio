@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     # GitHub OAuth
     GITHUB_CLIENT_ID: str
     GITHUB_CLIENT_SECRET: str
+    GITHUB_OAUTH_REDIRECT_URI: str = "http://localhost:8000/auth/callback"
 
     # App
     SECRET_KEY: str = "your-very-secure-random-secret-key-change-me"
@@ -13,6 +14,14 @@ class Settings(BaseSettings):
 
     # Database (MVP = SQLite)
     DB_NAME: str = "onelink_portfolio.db"
+    
+    # Upload settings
+    MAX_UPLOAD_SIZE: int = 10 * 1024 * 1024  # 10MB
+    UPLOAD_DIR: str = "uploads"
+    ALLOWED_MEDIA_TYPES: list = [
+        "image/png", "image/jpeg", "image/gif",
+        "video/mp4", "video/webm"
+    ]
 
     model_config = SettingsConfigDict(
         env_file=".env",
